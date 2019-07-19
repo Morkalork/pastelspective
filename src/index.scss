@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.app {
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    header {
+      margin: 3rem 0;
+      width: 22rem;
+      > * {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      textarea,
+      select,
+      button {
+        width: 100%;
+        padding: 0.25rem 0.5rem;
+        border: 2px #000 solid;
+        border-radius: 0.25rem;
+      }
+      textarea {
+        min-height: 8rem;
+        resize: none;
+      }
+      button {
+        font-weight: bold;
+        &:hover {
+          opacity: 0.85;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .board {
+    display: flex;
+    justify-content: space-evenly;
+
+    > div {
+      min-height: 50vh;
+      width: 25vw;
+      &.bad {
+        .card {
+          background-color: #ffb3ba;
+          border: 4px #ffa7b0 solid;
+        }
+      }
+      &.good {
+        .card {
+          background-color: #baffc9;
+          border: 4px #a7ffb9 solid;
+        }
+      }
+      &.observation {
+        .card {
+          background-color: #bae1ff;
+          border: 4px #a5d8ff solid;
+        }
+      }
+
+      h4 {
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 1px #eaeaea solid;
+      }
+
+      .card {
+        transition: 0.5s;
+        position: relative;
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 0 0 0.25rem #cccccc;
+
+        &.isClosing {
+          opacity: 0;
+        }
+
+        .tools {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          font-weight: bold;
+          font-size: 0.65rem;
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
